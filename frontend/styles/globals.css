@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply bg-slate-100 box-border;
+}
+
+* {
+    @apply box-border;
+}
+
+.input {
+    @apply p-2 shadow-inner border-slate-200 border-2 rounded-md outline-none;
+}
+
+.button {
+    @apply drop-shadow-md border-2 bg-white p-2 rounded-md pl-3 text-slate-800 transition-all hover:shadow-inner hover:drop-shadow-none hover:border-slate-200;
+}
+
+.button-dark {
+    @apply drop-shadow-md border-2 text-white p-2 rounded-md pl-3 bg-slate-500 transition-all hover:shadow-inner hover:drop-shadow-none hover:border-slate-200;
+}
