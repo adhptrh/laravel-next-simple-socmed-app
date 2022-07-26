@@ -1,8 +1,21 @@
 import Link from "next/link"
+import { motion } from "framer-motion"
+import { useState } from "react"
+import { useRouter } from "next/router"
 
 export default function Home() {
+  const router = useRouter()
+  const [scale, setScale] = useState(1)
+
+  const switchPage = () => {
+    setScale(0)
+    setTimeout(()=>{
+      router.push("/register")
+    }, 300)
+  }
+
   return <>
-  <div className={"flex justify-center items-center h-screen"}>
+  <motion.div initial={{ opacity: 0, scale:0 }} animate={{ opacity: 1, scale:scale }} transition={{ duration: 0.3, ease: [0, 0.71, 0.2, 1.01] }} className={"flex justify-center items-center h-screen"}>
     <div className={"w-96 mx-4"}>
       <p className={"text-3xl font-bold mb-4 text-slate-600"}>🌐 Socialia</p>
       <input className={"input w-full mb-4"} placeholder={"Username"}/>
@@ -11,11 +24,9 @@ export default function Home() {
         <button className={"button-dark w-full"}>Login 👉</button>
       </div>
       <div className="w-full text-end">
-      <Link href="/register" >
-        <a className="underline text-blue-600">I don't have an account</a>
-      </Link>
+      <button onClick={switchPage} className="underline text-blue-600">I don't have an account</button>
       </div>
     </div>
-  </div>
+  </motion.div>
   </>
 }
