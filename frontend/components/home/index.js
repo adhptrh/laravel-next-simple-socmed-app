@@ -11,7 +11,7 @@ export default function () {
         <div className={"flex gap-2 xl:gap-4 justify-center"}>
             <Left data={{ logout, setLogout }} />
             <Middle data={{ logout, setLogout }} />
-            <Right />
+            <Right data={{ logout, setLogout }} />
         </div>
     </>
 }

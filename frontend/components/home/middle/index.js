@@ -17,11 +17,11 @@ export default function (props) {
         <motion.div initial={{ opacity: 0, y: "100%" }} animate={{ opacity: opacity, y: y }} transition={{ duration: 0.3, ease: [0, 0.71, 0.2, 1.0] }} className="w-[800px] h-96 mt-2 xl:mt-4">
             <div className="bg-white w-full rounded-md drop-shadow-md mb-4 p-4">
                 <p className="font-bold text-slate-600 mb-4">Create post</p>
-                <textarea className="w-full border-2 h-[100px] outline-none shadow-inner rounded-md p-4"></textarea>
+                <textarea className="w-full border-2 h-[100px] outline-none shadow-inner rounded-md p-2"></textarea>
                 <div className="flex">
                     <div className="flex text-slate-400 justify-center items-center font-bold p-4 rounded-md border-2 border-dashed">
                         <div>
-                            + Add Image
+                            + Add Image/Video/Sound 🖼️
                         </div>
                     </div>
                 </div>

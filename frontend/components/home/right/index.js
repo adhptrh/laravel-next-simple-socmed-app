@@ -1,4 +1,4 @@
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
@@ -14,15 +14,13 @@ export default function (props) {
         },300)
     },[])
 
-    const logout = () => {
-        setY("100%")
-        setOpacity(0)
-        props.data.setLogout(true)
-        setTimeout(()=>{
-            router.push("/login")
-        },300)
-    }
-
+    useEffect(()=>{
+        if (props.data.logout) {
+            setY("100%")
+            setOpacity(0)
+        }
+    }, [props.data.logout])
+    
     return <>
         <motion.div initial={{opacity:0,y:"100%"}} animate={{opacity:opacity,y:y}} transition={{ duration: 0.3, ease: [0,0.7,0.2,1.0] }}>
             <div className={"hidden 2xl:block w-[300px] mt-4"}> 
