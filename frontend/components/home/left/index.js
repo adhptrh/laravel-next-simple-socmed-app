@@ -25,26 +25,23 @@ export default function (props) {
 
     return <>
         <motion.div initial={{opacity:0,y:"100%"}} animate={{opacity:opacity,y:y}} transition={{ duration: 0.3, ease: [0,0.7,0.2,1.0] }}>
-            <div className={"hidden xl:block w-[300px] mt-4"}> 
-                <div className="fixed w-[300px] bg-white rounded-md drop-shadow-md mb-4 p-4">
-                    <p className="flex-auto font-bold text-slate-600 mb-4">Me</p>
-                    <div className="flex justify-center">
-                        <div className="w-[150px] h-[150px] rounded-full bg-gray-200 mb-4"></div>
+            <div className={"ml-2 xl:block w-[55px] xl:w-[300px] mt-2 xl:mt-4"}> 
+                <div className="fixed bg-white w-[55px] xl:w-[300px] rounded-md drop-shadow-md mb-4">
+                    <a href="#">
+                        <div className="w-full transition-all bg-slate-100 p-4 font-bold rounded-md">🏠 <span className="hidden xl:inline">Home</span></div>
+                    </a>
+                    <a href="#">
+                        <div className="w-full transition-all hover:bg-slate-100 bg-white rounded-md p-4">🧍 <span className="hidden xl:inline">Profile</span></div>
+                    </a>
+                    <a href="#">
+                        <div className="w-full transition-all hover:bg-slate-100 bg-white rounded-md p-4">🔔 <span className="hidden xl:inline">Notifications</span></div>
+                    </a>
+                    <a href="#">
+                        <div className="w-full transition-all hover:bg-slate-100 bg-white rounded-md p-4">⚙️ <span className="hidden xl:inline">Settings</span></div>
+                    </a>
+                    <div className="cursor-pointer" onClick={logout}>
+                        <div className="w-full transition-all hover:bg-red-500 bg-red-400 text-white rounded-md p-4">👈 <span className="hidden xl:inline">Logout</span></div>
                     </div>
-                    <p className="text-center font-bold text-slate-600">rynx</p>
-                    <p className="text-center mb-4 text-slate-600">this is bio</p>
-                    <div className="flex">
-                        <div className="flex-auto">
-                            <p className="text-center font-bold text-slate-600">Followers</p>
-                            <p className="text-center mb-4 text-slate-600">0</p>
-                        </div>
-                        <div className="flex-auto">
-                            <p className="text-center font-bold text-slate-600">Following</p>
-                            <p className="text-center mb-4 text-slate-600">0</p>
-                        </div>
-                    </div>
-                    <button className="button-dark w-full mb-2">Edit Profile ✍️</button>
-                    <button onClick={logout} className="button-red w-full">Logout 🚪🚶</button>
                 </div>
             </div>
         </motion.div>
