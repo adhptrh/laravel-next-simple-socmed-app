@@ -1,7 +1,13 @@
 import { motion } from "framer-motion"
-import Home from "../components/home"
+import Layout from "../components/layout"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
+import { redirect } from "next/dist/server/api-utils"
+
 export default function() {
-  return <>
-    <Home />
-  </>
+  const router = useRouter()
+  useEffect(()=>{
+    router.push("/home")
+  },[])
+  return <></>
 }
